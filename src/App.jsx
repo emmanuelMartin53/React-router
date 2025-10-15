@@ -4,6 +4,7 @@ import {BrowserRouter, Routes, Route, Navigate} from "react-router-dom";
 import Docs from "./components/Docs";
 import Tutorial from "./components/Tutorial";
 import Community from "./components/Community";
+import Profile from "./components/Profile";
 import ErrorPage from "./components/ErrorPage";
 import './App.css'
 
@@ -22,7 +23,7 @@ class App extends Component {
   }
 
   render () {
-    const {underconst} = this.state
+    // const {underconst} = this.state
 
     return (
       <BrowserRouter>
@@ -36,6 +37,7 @@ class App extends Component {
           }/>
            */}
           <Route path="/community" element={<Community />} />
+          <Route path="/users/:profilId" element={<Profile />}/>
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </BrowserRouter>
