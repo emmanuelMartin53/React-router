@@ -4,7 +4,7 @@ import Docs from "./components/Docs";
 
 import Tutorial from "./components/Tutorial";
 import Community from "./components/Community";
-import Profile from "./components/Profile";
+import Profile from "./components/Profiles";
 import ErrorPage from "./components/ErrorPage";
 import Users from "./components/Users";
 
