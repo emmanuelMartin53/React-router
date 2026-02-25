@@ -26,6 +26,9 @@ const Menu = () => {
             <li className="nav-item">
               <NavLink className={(navInfo) => navInfo.isActive ? "nav-link active" : "nav-link" } to="/community">Community</NavLink>
             </li>
+             <li className="nav-item">
+              <NavLink className="nav-link" to="/blog">Blog</NavLink>
+            </li>
           </ul>
         </div>
     </nav>

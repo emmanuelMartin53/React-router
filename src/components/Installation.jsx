@@ -22,7 +22,7 @@ const Installation = () => {
         Interdum et malesuada fames ac ante ipsum primis in faucibus.
         Vivamus vitae sem id elit tempor vehicula. Ut aliquam leo vitae tortor condimentum sollicitudin.
         Vestibulum posuere condimentum massa ac varius. Pellentesque accumsan est et dui dictum ornare.
-        Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+        Classe aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
         Suspendisse ex quam, malesuada vitae rutrum id, bibendum vitae ex. Aliquam ultricies maximus ultricies.
       </p>
     </>

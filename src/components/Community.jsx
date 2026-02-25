@@ -19,9 +19,6 @@ const Community = () => {
         >
         Retour vers Docs
         </button>
-
-
-
     </div>
   )
 }

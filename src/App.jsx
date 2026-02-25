@@ -1,18 +1,22 @@
-import Menu from "./components/Menu";
 import {Routes, Route, Navigate} from "react-router-dom";
+import { lazy, Suspense } from "react";
 import Docs from "./components/Docs";
 
+import Menu from "./components/Menu";
 import Tutorial from "./components/Tutorial";
 import Community from "./components/Community";
 import Profile from "./components/Profiles";
 import ErrorPage from "./components/ErrorPage";
 import Users from "./components/Users";
+// import Blog from "./components/Blog"
 
 import Installation from "./components/Installation";
 import './App.css'
 import Hooks from "./components/Hooks";
 import Fondamentaux from "./components/Fondamentaux";
 import NoteUsers from "./components/NoteUsers";
+
+const LazyBlog = lazy(() => import("./components/Blog"))
 
 const App = () => {
 
@@ -47,11 +51,26 @@ const App = () => {
             underconst.Tutorial ? (<Navigate to="/" />) : (<Tutorial />)
           }/>
            */}
+
+
           <Route path="/community" element={<Community />} />
           <Route path="users" element={<Users />}>
             <Route path=":profilId" element={<Profile />}/>
             <Route path="noteUsers" element={<NoteUsers />}/>
           </Route>
+
+          {/* <Route path="/blog" element={<Blog />}/> */}
+          <Route
+            path="/blog"
+            element={
+            <Suspense
+              fallback={<div>Chargement des articles...</div>}
+            >
+              <LazyBlog />
+            </Suspense>
+          }
+          />
+
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </>
