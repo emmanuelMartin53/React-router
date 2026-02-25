@@ -1,35 +1,36 @@
 import Menu from "./components/Menu";
-import { Component } from "react";
 import {Routes, Route, Navigate} from "react-router-dom";
 import Docs from "./components/Docs";
+
 import Tutorial from "./components/Tutorial";
 import Community from "./components/Community";
 import Profile from "./components/Profile";
 import ErrorPage from "./components/ErrorPage";
 import './App.css'
 
-class App extends Component {
+const App = () => {
 
-  constructor(props) {
-    super(props)
+  // constructor(props) {
+  //   super(props)
 
-    this.state = {
-       underconst: {
-          Docs: false,
-          Tutorial: true,      // Page  encore en construction
-          Community: false
-       }
-    }
-  }
+  //   this.state = {
+  //      underconst: {
+  //         Docs: false,
+  //         Tutorial: true,      // Page  encore en construction
+  //         Community: false
+  //      }
+  //   }
+  // }
 
-  render () {
-    // const {underconst} = this.state
+  // render () {
+  //   // const {underconst} = this.state
 
     return (
       <>
         <Menu />
         <Routes>
-          <Route path="/" element={<Docs />} />
+          <Route path="/" element={<Navigate to="/docs" />}/>
+          <Route path="/docs" element={<Docs />}/>
           <Route path="/tutorial" element={<Tutorial />}/>
           {/* <Route path="/tutorial" element={
             underconst.Tutorial ? (<Navigate to="/" />) : (<Tutorial />)
@@ -41,9 +42,7 @@ class App extends Component {
         </Routes>
       </>
     )
-
-  }
-
+  // }
 }
 
 export default App

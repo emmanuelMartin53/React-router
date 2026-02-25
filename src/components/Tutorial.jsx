@@ -1,24 +1,54 @@
-import { Navigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 
-const Tutorial = (props) => {
+
+
+const Tutorials = (props) => {
   console.log(props)
 
+  const navigate = useNavigate()
+
+  const initialState = {
+    Docs:false,
+    Tutorial: true,
+    Community: false
+  }
+
+  const [underConst, setUnderConst] = useState(initialState)
+
   setTimeout(() => {
-    window.location.href = "/" // méthode qui fonctionne avec react-router-dom v6
+    navigate("/") // méthode qui fonctionne avec react-router-dom v6
   }, 5000);
 
 
   return (
       <div className="container mt-3">
-        <h1>Tutorial: Intro to react</h1>
-        <div className="alert alert-warning alert-dismissible fade show" role="alert">
-          <strong>Oups</strong> this pages is under construction.
-          You will be redirected to the Docs page in 5 seconds
+
+      {
+        underConst.Tutorial ? (
+        <div className="alert alert-warning alert-dismissible fade show mt-3" role="alert">
+          <strong>Oups</strong> Cette page n'existe pas.
+          Redirection dans 5 secondes
           <button type="button" className="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
-    </div>
+        ) : <h1>Tutorial: Intro to react</h1>
+      }
+
+        <button
+          className="btn btn-primary"
+          onClick={() => navigate(-1)}
+        >
+        Retour vers Docs
+        </button>
+         <button
+          className="btn btn-secondary"
+          onClick={() => navigate("/community")}
+        >
+        Aller vers Community
+        </button>
+      </div>
   )
 }
 
-export default Tutorial;
+export default Tutorials;

@@ -1,6 +1,12 @@
 import { NavLink, Link } from "react-router-dom";
 
 const Menu = () => {
+
+  const navStyle = ({isActive}) => {
+    return {
+      borderBottom: isActive && "4px solid #61DAFB"
+    }
+  }
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <a className="navbar-brand" href="/">Navbar</a>
@@ -15,10 +21,10 @@ const Menu = () => {
               <NavLink className="nav-link" aria-current="page" to="/">Docs</NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/tutorial">Tutorial</NavLink>
+              <NavLink className="nav-link" style={navStyle} to="/tutorial">Tutorial</NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/community">Community</NavLink>
+              <NavLink className={(navInfo) => navInfo.isActive ? "nav-link active" : "nav-link" } to="/community">Community</NavLink>
             </li>
           </ul>
         </div>
