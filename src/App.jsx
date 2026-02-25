@@ -1,6 +1,6 @@
 import Menu from "./components/Menu";
 import { Component } from "react";
-import {BrowserRouter, Routes, Route, Navigate} from "react-router-dom";
+import {Routes, Route, Navigate} from "react-router-dom";
 import Docs from "./components/Docs";
 import Tutorial from "./components/Tutorial";
 import Community from "./components/Community";
@@ -26,12 +26,11 @@ class App extends Component {
     // const {underconst} = this.state
 
     return (
-      <BrowserRouter>
+      <>
         <Menu />
         <Routes>
-          <Route path="/" element={<Docs />}/>
+          <Route path="/" element={<Docs />} />
           <Route path="/tutorial" element={<Tutorial />}/>
-
           {/* <Route path="/tutorial" element={
             underconst.Tutorial ? (<Navigate to="/" />) : (<Tutorial />)
           }/>
@@ -40,7 +39,7 @@ class App extends Component {
           <Route path="/users/:profilId" element={<Profile />}/>
           <Route path="*" element={<ErrorPage />} />
         </Routes>
-      </BrowserRouter>
+      </>
     )
 
   }
