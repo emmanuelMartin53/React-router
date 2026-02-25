@@ -6,11 +6,13 @@ import Tutorial from "./components/Tutorial";
 import Community from "./components/Community";
 import Profile from "./components/Profile";
 import ErrorPage from "./components/ErrorPage";
+import Users from "./components/Users";
 
 import Installation from "./components/Installation";
 import './App.css'
 import Hooks from "./components/Hooks";
 import Fondamentaux from "./components/Fondamentaux";
+import NoteUsers from "./components/NoteUsers";
 
 const App = () => {
 
@@ -35,6 +37,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Navigate to="/docs" />}/>
           <Route path="/docs" element={<Docs />}>
+            <Route index element={<Installation />} />
             <Route path="installation" element={<Installation />}/>
             <Route path="fondamentaux" element={<Fondamentaux />}/>
             <Route path="hooks" element={<Hooks />}/>
@@ -45,7 +48,10 @@ const App = () => {
           }/>
            */}
           <Route path="/community" element={<Community />} />
-          <Route path="/users/:profilId" element={<Profile />}/>
+          <Route path="users" element={<Users />}>
+            <Route path=":profilId" element={<Profile />}/>
+            <Route path="noteUsers" element={<NoteUsers />}/>
+          </Route>
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </>
