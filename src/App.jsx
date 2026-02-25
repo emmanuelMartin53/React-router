@@ -6,7 +6,11 @@ import Tutorial from "./components/Tutorial";
 import Community from "./components/Community";
 import Profile from "./components/Profile";
 import ErrorPage from "./components/ErrorPage";
+
+import Installation from "./components/Installation";
 import './App.css'
+import Hooks from "./components/Hooks";
+import Fondamentaux from "./components/Fondamentaux";
 
 const App = () => {
 
@@ -30,7 +34,11 @@ const App = () => {
         <Menu />
         <Routes>
           <Route path="/" element={<Navigate to="/docs" />}/>
-          <Route path="/docs" element={<Docs />}/>
+          <Route path="/docs" element={<Docs />}>
+            <Route path="installation" element={<Installation />}/>
+            <Route path="fondamentaux" element={<Fondamentaux />}/>
+            <Route path="hooks" element={<Hooks />}/>
+          </Route>
           <Route path="/tutorial" element={<Tutorial />}/>
           {/* <Route path="/tutorial" element={
             underconst.Tutorial ? (<Navigate to="/" />) : (<Tutorial />)
